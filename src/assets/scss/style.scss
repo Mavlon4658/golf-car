@@ -504,6 +504,10 @@ body {
         overflow: visible;
         margin: 0 0 40px;
         width: 419px;
+
+        @include media(576) {
+            width: 100%;
+        }
     }
 
     &__card {
@@ -1409,7 +1413,7 @@ body {
 
     .swiper-pagination {
         display: none;
-        
+
         @include media(1100) {
             top: auto;
             bottom: -46px;
