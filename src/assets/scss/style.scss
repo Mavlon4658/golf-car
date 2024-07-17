@@ -1458,3 +1458,355 @@ body {
     }
 }
 // FAQ end
+
+// Rental home
+.rental_home {
+    padding-top: 83px;
+    margin-bottom: 80px;
+
+    @include media(1100) {
+        padding-top: 26px;
+        margin-bottom: 43px;
+    }
+
+    &__link {
+        display: inline-flex;
+        width: auto;
+        padding: 24px 40px;
+        margin-bottom: 40px;
+        font-size: 20px;
+
+        @include media (1100) {
+            margin-bottom: 25px;
+            font-size: 16px;
+            padding: 15px 37px 16px;
+        }
+    }
+
+    .home {
+        &__content {
+            @include media(-1100) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &__card {
+            &_networks {
+                @include media(1100) {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+    
+                    li:last-child {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding-left: 0;
+                        margin-top: -3px;
+                    }
+                }
+            }
+
+            .btn_darkblue {
+                text-align: center;
+                padding: 24px 20px 20px;
+            }
+        }
+    }
+}
+// Rental home end
+
+// Delivery
+.delivery {
+    background: $color-black-100;
+    padding: 91px 0 113px;
+
+    @include media(1100) {
+        padding: 39px 0 83px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+
+        @include media(1100) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        width: 881px;
+        flex-shrink: 0;
+
+        @include media(1350) {
+            width: 750px;
+        }
+
+        @include media(1100) {
+            width: 100%;
+        }
+    }
+
+    &__right {
+        width: 100%;
+    }
+
+    h2 {
+        color: #fff;
+        margin-top: 3px;
+
+        @include media(1100) {
+            margin-top: 20px;
+        }
+    }
+
+    .sm_line {
+        margin: 53px 0 37px;
+
+        @include media(1100) {
+            margin: 36px 0 25px;
+        }
+    }
+
+    p {
+        color: $color-blue-300;
+        font-size: 32px;
+        font-weight: 400;
+
+        @include media(1100) {
+            font-size: 24px;
+        }
+    }
+}
+// Delivery end
+
+// Discount
+.discount {
+    padding: 69px 0 90px;
+
+    @include media(1100) {
+        padding: 20px 0 43px;
+    }
+
+    .sm_line {
+        margin: 43px 0;
+
+        @include media(1100) {
+            margin: 25px 0;
+        }
+    }
+
+    &__description {
+        color: $color-black-100;
+        font-size: 32px;
+        margin-bottom: 60px;
+
+        @include media(1100) {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+}
+// Discount end
+
+// Supply
+.supply {
+    background: $color-black-100;
+    padding: 123px 0 81px;
+
+    @include media(1100) {
+        padding: 39px 0 71px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include media(1100) {
+            flex-direction: column;
+        }
+
+        &_content {
+            width: 629px;
+
+            @include media(1100) {
+                width: 100%;
+            }
+        }
+
+        &_texts {
+            width: 560px;
+
+            @include media(1100) {
+                width: 100%;
+            }
+
+            a {
+                font-family: $font-raleway;
+                color: $color-green-100;
+                text-decoration: underline;
+                font-size: 32px;
+
+                @include media(1100) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: #fff;
+        font-size: 48px;
+        margin-top: 20px;
+
+        @include media(1100) {
+            font-size: 32px;
+        }
+    }
+
+    .sm_line {
+        margin: 70px 0 37px;
+
+        @include media(1100) {
+            margin: 36px 0 25px;
+        }
+    }
+
+    &__description {
+        font-size: 24px;
+        color: $color-blue-300;
+        margin-bottom: 37px;
+
+        @include media(1100) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 107px;
+
+        @include media(1300) {
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        @include media(1100) {
+            margin-top: 59px;
+        }
+    }
+
+    &__card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 41px 48px 38px 42px;
+        color: $color-black-100;
+
+        @include media(1100) {
+            width: 100%;
+            text-align: center;
+            padding: 38px 28px 38px 42px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 22px 0 16px;
+            text-align: left;
+        }
+        
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .tel {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            width: 100%;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            padding-left: 19px;
+            position: relative;
+            margin-bottom: 34px;text-align: left;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 11px;
+                height: 11px;
+                background: $color-green-100;
+                border-radius: 50%;
+            }
+        }
+
+        &_links {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            a {
+                font-size: 20px;
+                font-family: $font-raleway;
+            }
+
+            .btn_darkblue {
+                padding: 14px 20px;
+                gap: 20px;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        padding-top: 9px;
+        width: 338px;
+        gap: 13px;
+
+        @include media(1100) {
+            width: 100%;
+        }
+
+        &:nth-child(2) {
+            margin: 0 190px 0 120px;
+
+            @include media(1450) {
+                margin: 0 50px;
+            }
+
+            @include media(1300) {
+                margin: 0;
+            }
+        }
+
+        a {
+            color: $color-blue-300;
+            font-size: 24px;
+        }
+
+        .title {
+            font-family: $font-raleway;
+            font-size: 36px;
+            text-decoration: underline;
+            color: #fff;
+
+            &:not(:first-child) {
+                margin: 13px 0 2px;
+            }
+        }
+    }
+}
+// Supply end

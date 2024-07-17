@@ -31,6 +31,8 @@ import legalCard2 from './legal-card-2.png';
 import legalCard3 from './legal-card-3.png';
 import legalLinkIcon from './legal-link-icon.svg';
 import hand from './hand.svg';
+import deliveryIcon1 from './delivery-icon-1.svg';
+import logo from './logo.svg';
 
 const IMG = {
     homeCard1,
@@ -66,6 +68,8 @@ const IMG = {
     legalCard3,
     legalLinkIcon,
     hand,
+    deliveryIcon1,
+    logo,
 }
 
 export default IMG;

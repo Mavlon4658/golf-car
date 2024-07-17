@@ -58,31 +58,3 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 0;
     margin: 0;
 }
-
-* {
-    -webkit-text-decoration-skip: none !important;
-    text-decoration-skip-ink: none !important;
-    text-decoration: none !important;
-}
-
-a {
-    text-decoration-color: transparent !important;
-    -webkit-text-decoration-color: transparent !important;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active {
-    -webkit-text-decoration-skip: none !important;
-    text-decoration-skip-ink: none !important;
-    text-decoration: none !important;
-}
-
-@media screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-    a {
-        -webkit-text-decoration-skip: none !important;
-        text-decoration-skip-ink: none !important;
-        text-decoration: none !important;
-    }
-}

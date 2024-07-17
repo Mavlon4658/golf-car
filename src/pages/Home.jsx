@@ -17,7 +17,7 @@ export default function Home () {
         console.log(swpRef.current)
     }
 
-    return (<div className="wrapper">
+    return (<>
         
         {/* Home */}
         <section className="home">
@@ -557,5 +557,5 @@ export default function Home () {
         </section>
         {/* FAQ end */}
 
-    </div>)
+    </>)
 }
