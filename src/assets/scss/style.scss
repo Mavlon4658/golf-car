@@ -1810,3 +1810,512 @@ body {
     }
 }
 // Supply end
+
+// Dropdown
+.dropdown {
+    background: $color-light-100;
+    border-radius: 20px;
+    padding: 25px 36px 9px 35px;
+
+    @include media(1100) {
+        padding: 18px 20px;
+    }
+
+    &_head {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        width: 100%;
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-black-100;
+        padding-bottom: 16px;
+
+        @include media(-1100) {
+            .icon {
+                display: none;
+            }
+        }
+
+        @include media(1100) {
+            position: relative;
+            padding-bottom: 0;
+            font-size: 20px;
+            gap: 20px;
+
+            .icon {
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+        }
+
+        &.active {
+            @include media(1100) {
+                .icon {
+                    transform: rotateZ(-90deg);
+                }
+            }
+        }
+    }
+
+    &_body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0 52px;
+        border-top: 1px solid rgba(0, 0, 0, .5);
+
+        @include media(1100) {
+            margin-top: 22px;
+            padding: 22px 0 17px;
+            gap: 22px;
+
+            &:not(.active) {
+                display: none;
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgba(14, 21, 54, 0.5);
+            width: 100%;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+            @include media(1100) {
+                padding-left: 39px;
+                min-height: 25px;
+                color: $color-black-100;
+                font-size: 20px;
+
+                &::before {
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    background: #fff;
+                    border: 2px solid rgba(105, 116, 140, 0.5);
+                }
+
+                &::after {
+                    content: '\2713';
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    transform: translateY(-50%);
+                    font-size: 20px;
+                    display: none;
+                }
+            }
+        }
+
+        input:checked + label {
+            @include media(-1100) {
+                color: $color-black-100;
+                text-decoration: underline;
+            }
+
+            @include media(1100) {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+
+        .show {
+            .btn_darkblue {
+                font-size: 20px;
+                padding: 18px 0 19px;
+                width: 100%;
+            }
+
+            @include media(-1100) {
+                display: none;
+            }
+        }
+    }
+}
+// Dropdown end
+
+// Breadcrumb
+.breadcrumb {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    padding: 14px 26px;
+    background: $color-light-100;
+    border-radius: 15px;
+    font-size: 20px;
+
+    @include media(1100) {
+        width: 100%;
+        justify-content: center;
+    }
+
+    a {
+        @include media(1100) {
+            font-weight: 400;
+        }
+    }
+}
+// Breadcrumb end
+
+// Advice
+.advice {
+    background: $color-light-100;
+    padding: 40px;
+    border-radius: 20px;
+
+    @include media(1100) {
+        padding: 0;
+    }
+
+    &_title {
+        color: $color-black-100;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 16px;
+
+        @include media(1100) {
+            margin-bottom: 0;
+            padding: 19px 20px 17px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 20px;
+            position: relative;
+
+            .icon {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &.active {
+                padding: 40px 24px 16px;
+
+                img:not(.icon) {
+                    display: none;
+                }
+
+                .icon {
+                    top: 20px;
+                    transform: rotateZ(-90deg);
+                }
+            }
+        }
+
+        @include media(-1100) {
+            img {
+                display: none !important;
+            }
+        }
+    }
+
+    &_body {
+        @include media(1100) {
+            padding: 0 27px 40px 23px;
+
+            &:not(.active) {
+                display: none;
+            }
+        }
+    }
+
+    &_subtitle {
+        color: $color-black-100;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .contact-tel {
+        margin-bottom: 20px;
+    }
+
+    .btn_darkblue {
+        font-size: 20px;
+        padding: 14px 20px;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+// Advice end
+
+// Contact tel
+.contact-tel {
+    a {
+        color: $color-black-100;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 16px;
+        color: $color-black-100;
+        position: relative;
+        padding-left: 19.15px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10.64px;
+            height: 10.64px;
+            border-radius: 50%;
+            background: $color-green-100;
+        }
+    }
+}
+// Contact tel end
+
+// Car slide
+.car-slide {
+    .swiper {
+        padding: 0 10px 28px;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+
+        &-slide {
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .25);
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                z-index: -1;
+                background: linear-gradient(to bottom, rgba(14, 21, 54, 0.1), #000);
+            }
+
+            .main_img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            span {
+                border-radius: 10px;
+                background: #fff;
+                font-family: $font-raleway;
+                font-size: 16px;
+                color: $color-black-100;
+                font-weight: bold;
+                padding: 5px 14px 6px;
+            }
+
+            a {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+            }
+
+            h3 {
+                font-family: $font-raleway;
+                color: #fff;
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 400;
+                color: #fff;
+            }
+        }
+
+        &-pagination {
+            gap: 6px;
+            display: flex;
+            justify-content: center;
+
+            span {
+                padding: 0;
+                margin: 0 !important;
+                background: $color-blue-200;
+                opacity: 0.5;
+                height: 6px;
+                width: 31px;
+                border-radius: 5px;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+// Car slide end
+
+// Catalog
+.catalog {
+    background: #fff;
+    min-height: 100vh;
+    padding: 47px 0 131px;
+
+    @include media(1100) {
+        padding: 30px 0 42px;
+    }
+
+    &__head {
+        margin-bottom: 20px;
+
+        @include media(-1100) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 62px;
+
+        @include media(1300) {
+            gap: 40px;
+        }
+
+        @include media(1100) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        width: 400px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @include media(1300) {
+            width: 390px;
+        }
+
+        @include media(1100) {
+            width: 100%;
+            gap: 20px;
+
+            .car-slide {
+                display: none;
+            }
+        }
+    }
+
+    &__right {
+        width: 100%;
+
+        .catalog__head {
+            display: block;
+            margin-bottom: 60px;
+
+            @include media(1100) {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        margin: 40px 0 10px;
+
+        @include media (1100) {
+            margin: 20px 0 2px;
+            text-align: center;
+        }
+    }
+
+    &__description {
+        font-size: 32px;
+        font-weight: 400;
+        color: $color-blue-400;
+
+        @include media(1100) {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+    &__block {
+        margin-bottom: 50px;
+
+        @include media(1100) {
+            margin-bottom: 30px;
+        }
+        
+        &_title {
+            font-family: $font-raleway;
+            font-size: 48px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 36px;
+
+            @include media(1100) {
+                font-size: 36px;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+        }
+
+        &_list {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            @include media(1300) {
+                gap: 30px;
+            }
+        }
+
+        .solution_card {
+            opacity: 1;
+            width: calc(50% - 25px);
+
+            @include media(1300) {
+                width: calc(50% - 15px);
+            }
+
+            @include media(1100) {
+                width: 100%;
+            }
+        }
+    }
+}
+// Catalog end

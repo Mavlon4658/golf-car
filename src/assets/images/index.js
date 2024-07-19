@@ -33,6 +33,9 @@ import legalLinkIcon from './legal-link-icon.svg';
 import hand from './hand.svg';
 import deliveryIcon1 from './delivery-icon-1.svg';
 import logo from './logo.svg';
+import dropdownDots from './dropdown-dots.svg';
+import carSlideCard from './car-slide-card.png';
+import adviceIcon from './advice-icon.svg';
 
 const IMG = {
     homeCard1,
@@ -70,6 +73,9 @@ const IMG = {
     hand,
     deliveryIcon1,
     logo,
+    dropdownDots,
+    carSlideCard,
+    adviceIcon,
 }
 
 export default IMG;
