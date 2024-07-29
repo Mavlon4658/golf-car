@@ -36,6 +36,19 @@ import logo from './logo.svg';
 import dropdownDots from './dropdown-dots.svg';
 import carSlideCard from './car-slide-card.png';
 import adviceIcon from './advice-icon.svg';
+import handTop from './hand-top.svg';
+import shieldCheck from './shield-check.svg';
+import serviceSwp1 from './service-swp-1.png';
+import serviceSwp2 from './service-swp-2.png';
+import serviceSwp3 from './service-swp-3.png';
+import serviceSwp4 from './service-swp-4.png';
+import videoPlay from './video-play.svg';
+import characteristicIcon1 from './characteristic-icon-1.svg';
+import characteristicIcon2 from './characteristic-icon-2.svg';
+import characteristicIcon3 from './characteristic-icon-3.svg';
+import linkRightIcon from './link-right-icon.svg';
+import handIcon from './hand-icon.svg';
+import chevronBottom from './chevron-bottom.svg';
 
 const IMG = {
     homeCard1,
@@ -76,6 +89,19 @@ const IMG = {
     dropdownDots,
     carSlideCard,
     adviceIcon,
+    handTop,
+    shieldCheck,
+    serviceSwp1,
+    serviceSwp2,
+    serviceSwp3,
+    serviceSwp4,
+    videoPlay,
+    characteristicIcon1,
+    characteristicIcon2,
+    characteristicIcon3,
+    linkRightIcon,
+    handIcon,
+    chevronBottom,
 }
 
 export default IMG;

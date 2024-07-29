@@ -1,14 +1,23 @@
 import IMG from "../assets/images";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import SolutoinSlide from "../components/SolutionSlide";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import { Link } from "react-router-dom";
 
 export default function Home () {
+    const [clientCard, setClientCard] = useState([
+        {alert: 'Проверено временем', description: 'Более 10 <span>лет на рынке</span> специальной техники', linkTitle: 'Перейти'},
+        {alert: 'Надежно', description: 'Гарантия до 36 мес, на все <span>батареи до 60 мес.</span>', linkTitle: 'Перейти'},
+        {alert: 'Сервис', description: 'Свой склад <span>запчастей</span> и <span>комплектующих</span>', linkTitle: 'Перейти'},
+        {alert: 'Удобно', description: '<span>Собственный</span> арендный парк из 30 гольфкаров.', linkTitle: 'Перейти'},
+        {alert: 'Доверие', description: '<span>Дилеры в крупнейших</span> городах России', linkTitle: 'Перейти'},
+        {alert: 'Забота о клиенте', description: 'Выездные бригады для <span>быстрого сервиса 24/7</span>', linkTitle: 'Перейти'},
+    ])
     const swpRef = useRef(null);
     const faqSwp = useRef(null);
 
@@ -72,32 +81,17 @@ export default function Home () {
         <section className="clients">
             <div className="main_container clients__container">
                 <h2 className="text-h1">Доверие крупных клиентов!</h2>
-                <p className="clients__description">🏰 Курорт Красная Поляна, 🎡 Сочи Парк, 🏎️ Росгонки, 🏨 Гранд Отель Геленджик, ВДНХ, 📍 Курорт Газпром, Лукойл, ФК Краснодар и многие другие.</p>
+                <p className="clients__description">🏰 Курорт Красная Поляна, 🎡 Сочи Парк, 🏎️ Росгонки, 🏨 Гранд Отель Геленджик, <br /> ☑️ ВДНХ, 📍 Курорт Газпром,⛽️ Лукойл, ⚽️ ФК Краснодар и многие другие.</p>
                 <ul className="clients__card">
-                    <li className="clients__card_item">
-                        <span className="alert">Проверено временем</span>
-                        <p>Более 10 <span>лет на рынке</span> специальной техники</p>
-                    </li>
-                    <li className="clients__card_item">
-                        <span className="alert">Надежно</span>
-                        <p>Гарантия до 36 мес, на все <span>батареи до 60 мес.</span></p>
-                    </li>
-                    <li className="clients__card_item">
-                        <span className="alert">Сервис</span>
-                        <p>Свой склад <span>запчастей</span> и <span>комплектующих</span></p>
-                    </li>
-                    <li className="clients__card_item">
-                        <span className="alert">Удобно</span>
-                        <p><span>Собственный</span> арендный парк из 30 гольфкаров.</p>
-                    </li>
-                    <li className="clients__card_item">
-                        <span className="alert">Доверие</span>
-                        <p><span>Дилеры в крупнейших</span> городах России</p>
-                    </li>
-                    <li className="clients__card_item">
-                        <span className="alert">Забота о клиенте</span>
-                        <p>Выездные бригады для <span>быстрого сервиса 24/7</span></p>
-                    </li>
+                    {clientCard.map((data, idx) => (
+                        <li key={idx} className="clients__card_item">
+                            <div className="clients__card_item__head">
+                                <span className="alert">{data.alert}</span>
+                                <Link to='/'>{data.linkTitle}</Link>
+                            </div>
+                            <p dangerouslySetInnerHTML={{ __html: data.description }} />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </section>

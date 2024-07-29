@@ -2,7 +2,7 @@ import { useState } from "react";
 import IMG from "../assets/images";
 import ContactTel from "./ContactTel";
 
-export default function Advice () {
+export default function Advice ({icon = false}) {
     const [active, setActive] = useState(false)
 
     return (<div className="advice">
@@ -10,9 +10,9 @@ export default function Advice () {
             className={`advice_title ${active ? 'active' : ''}`}
             onClick={() => {setActive(!active)}}
         >
-            <img src={IMG.adviceIcon} alt="" />
+            <img src={icon ? IMG.handIcon : IMG.adviceIcon} alt="" />
             <span>Нужна консультация?</span>
-            <img src={IMG.chevronRightDark} className="icon" alt="" />
+            <img src={icon ? IMG.chevronBottom : IMG.chevronRightDark} className="icon" alt="" />
         </h3>
         <div className={`advice_body ${active ? 'active' : ''}`}>
             <p className="advice_subtitle">Поможем подобрать гольфкар под Вашу нишу</p>
