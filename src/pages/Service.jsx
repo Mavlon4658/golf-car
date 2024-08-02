@@ -41,7 +41,7 @@ export default function Service () {
             <div className="service_head">
                 <Link to="/">Главная ></Link>
                 <Link to="/">Каталог ></Link>
-                <span>Гольфкары для отдыха и туризма ></span>
+                <Link to="/">Гольфкары для отдыха и туризма ></Link>
                 <span>eCar AW2041EK</span>
             </div>
             <div className="service_content">
@@ -117,6 +117,9 @@ export default function Service () {
                     </div>
                 </div>
                 <div className="service_content__right">
+                    <h3 className="title">Гольфкар eCar AW2041EK</h3>
+                    <div className="description">Описание</div>
+                    <Link to="#" className="characteristic_btn">Характеристики</Link>
                     <div className="service_content__right_block">
                         <a href="#" className="btn_darkblue">
                             <img src={IMG.calcuation} alt="" />
