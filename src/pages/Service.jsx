@@ -11,11 +11,19 @@ import 'swiper/css/thumbs';
 
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import Advice from "../components/Advice";
+import ContactTel from "../components/ContactTel";
 
 export default function Service () {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [serviceCard, setServiceCard] = useState([IMG.serviceSwp1, IMG.serviceSwp2, IMG.serviceSwp3, IMG.serviceSwp4, IMG.serviceSwp1, IMG.serviceSwp2, IMG.serviceSwp3, IMG.serviceSwp4]);
     const swpRef = useRef(null);
+    const [dropdownList, setDropdownList] = useState([
+        {title: 'Все характеристики'},
+        {title: 'Доставка'},
+        {title: 'Гарнтия'},
+        {title: 'Тест - драйв'},
+    ]);
+    const [activeDropdown, setActiveDropdown] = useState(null);
 
     return (<div className="service">
         <div className="main_container">
@@ -124,30 +132,22 @@ export default function Service () {
                         </li>
                     </ul>
                     <ul className="links">
-                        <li>
-                            <Link to={'#'}>
-                                <span>Все характеристики</span>
-                                <img src={IMG.linkRightIcon} alt="" />
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={'#'}>
-                                <span>Доставка</span>
-                                <img src={IMG.linkRightIcon} alt="" />
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={'#'}>
-                                <span>Гарнтия</span>
-                                <img src={IMG.linkRightIcon} alt="" />
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to={'#'}>
-                                <span>Тест - драйв</span>
-                                <img src={IMG.linkRightIcon} alt="" />
-                            </Link>
-                        </li>
+                        {dropdownList.map((data, dataID) => (
+                            <li className={`links_dropdown ${activeDropdown == dataID ? 'active' : ''}`} key={dataID}>
+                                <button className="links_dropdown__head" onClick={() => {setActiveDropdown(dataID)}}>
+                                    <span>{data.title}</span>
+                                    <img src={IMG.linkRightIcon} alt="" />
+                                </button>
+                                <div className="links_dropdown__body">
+                                    <p>Поможем подобрать гольфкар под Вашу нишу</p>
+                                    <ContactTel />
+                                    <a href="#" className="btn_darkblue">
+                                        <img src={IMG.checkIcon} alt="" />
+                                        <span>Подобрать гольфкар</span>
+                                    </a>
+                                </div>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="service_body__right">
@@ -156,7 +156,9 @@ export default function Service () {
             </div>
             <div className="review">
                 <h3 className="title">Описание</h3>
-                <textarea name="" id=""></textarea>
+                <div className="review_text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit quisquam quaerat vitae architecto, laborum eligendi. Dolorum doloremque neque quas odit facere quia perferendis possimus itaque modi voluptas soluta amet ex maiores sequi deleniti nisi quidem, nulla cumque consequatur reprehenderit harum praesentium veniam animi hic. Voluptatum, ab? Dolorem, illo numquam possimus modi, itaque quidem voluptatibus nesciunt delectus error exercitationem nostrum? Architecto iure deserunt inventore provident cupiditate ad vero voluptates fuga distinctio et reprehenderit, dolore at unde sunt laboriosam, vel ipsa dolor adipisci facere exercitationem praesentium quis minima corporis? Inventore perferendis temporibus odio sed cupiditate tempora, corrupti ratione. Eveniet voluptatibus architecto numquam.
+                </div>
             </div>
         </div>
     </div>)
