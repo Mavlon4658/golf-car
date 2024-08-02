@@ -42,6 +42,11 @@ import serviceSwp1 from './service-swp-1.jpg';
 import serviceSwp2 from './service-swp-2.jpg';
 import serviceSwp3 from './service-swp-3.jpg';
 import serviceSwp4 from './service-swp-4.jpg';
+import serviceSwp5 from './service-swp-5.jpg';
+import serviceSwp6 from './service-swp-6.jpg';
+import serviceSwp7 from './service-swp-7.jpg';
+import serviceSwp8 from './service-swp-8.jpg';
+import serviceSwpVideo from './service-swp-video.mp4';
 import videoPlay from './video-play.svg';
 import characteristicIcon1 from './characteristic-icon-1.svg';
 import characteristicIcon2 from './characteristic-icon-2.svg';
@@ -95,6 +100,11 @@ const IMG = {
     serviceSwp2,
     serviceSwp3,
     serviceSwp4,
+    serviceSwp5,
+    serviceSwp6,
+    serviceSwp7,
+    serviceSwp8,
+    serviceSwpVideo,
     videoPlay,
     characteristicIcon1,
     characteristicIcon2,

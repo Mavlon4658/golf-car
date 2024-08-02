@@ -14,9 +14,19 @@ import Advice from "../components/Advice";
 import ContactTel from "../components/ContactTel";
 
 export default function Service () {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [serviceCard, setServiceCard] = useState([IMG.serviceSwp1, IMG.serviceSwp2, IMG.serviceSwp3, IMG.serviceSwp4, IMG.serviceSwp1, IMG.serviceSwp2, IMG.serviceSwp3, IMG.serviceSwp4]);
+    const [serviceCard, setServiceCard] = useState([
+        {url: IMG.serviceSwp1, type: 'img'},
+        {url: IMG.serviceSwpVideo, type: 'video'},
+        {url: IMG.serviceSwp2, type: 'img'},
+        {url: IMG.serviceSwp3, type: 'img'},
+        {url: IMG.serviceSwp4, type: 'img'},
+        {url: IMG.serviceSwp5, type: 'img'},
+        {url: IMG.serviceSwp6, type: 'img'},
+        {url: IMG.serviceSwp7, type: 'img'},
+        {url: IMG.serviceSwp8, type: 'img'},
+    ]);
     const swpRef = useRef(null);
+    const swpRef2 = useRef(null);
     const [dropdownList, setDropdownList] = useState([
         {title: 'Все характеристики'},
         {title: 'Доставка'},
@@ -24,6 +34,7 @@ export default function Service () {
         {title: 'Тест - драйв'},
     ]);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     return (<div className="service">
         <div className="main_container">
@@ -35,19 +46,33 @@ export default function Service () {
             </div>
             <div className="service_content">
                 <div className="service_content__left">
-                <Swiper
-                        onSwiper={setThumbsSwiper}
+                    <Swiper
                         spaceBetween={'14'}
                         slidesPerView={4}
                         direction={'vertical'}
                         modules={[FreeMode, Navigation, Thumbs]}
                         className="swp_left"
+                        ref={swpRef2}
                     >
                         {serviceCard.map((item, idx) => (
-                            <SwiperSlide key={idx}>
-                                <img src={item} className="main_img" />
+                            <SwiperSlide
+                                className={`${activeSlide == idx ? 'active' : ''}`}
+                                key={idx}
+                                onClick={() => {
+                                    setActiveSlide(idx);
+                                    swpRef.current.swiper.slideTo(idx);
+                                }}
+                            >
+                                {item.type == 'img'
+                                    ? <img src={item.url} className="main_img" />
+                                    : <video src={item.url}></video>
+                                }
+                                {}
                                 <button>
-                                    <img src={IMG.videoPlay} alt="" />
+                                    {item.type == 'video'
+                                        ? <img src={IMG.videoPlay} alt="" />
+                                        : ''
+                                    }
                                 </button>
                             </SwiperSlide>
                         ))}
@@ -56,14 +81,28 @@ export default function Service () {
                         <Swiper
                             spaceBetween={15}
                             loop={true}
-                            thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
                             modules={[FreeMode, Navigation, Thumbs]}
                             ref={swpRef}
                             className="swp_right"
+                            onSlideChange={(swiperCore) => {
+                                const {
+                                    activeIndex,
+                                    snapIndex,
+                                    previousIndex,
+                                    realIndex,
+                                } = swiperCore;
+                                setActiveSlide(realIndex);
+                                if (swpRef2.current.swiper) {
+                                    swpRef2.current.swiper.slideTo(realIndex);
+                                }
+                            }}
                         >
-                            {serviceCard.map((data, idx) => (
+                            {serviceCard.map((item, idx) => (
                                 <SwiperSlide key={idx}>
-                                    <img src={data} />
+                                    {item.type == 'img'
+                                        ? <img src={item.url} className="main_img" />
+                                        : <video controls src={item.url}></video>
+                                    }
                                 </SwiperSlide>
                             ))}
                         </Swiper>
